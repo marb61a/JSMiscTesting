@@ -20,3 +20,28 @@ Cucumber
     - An example is a description of how the software is intended to behave, often illustrating a particular business rule or requirement.
     - Gherkin is a special syntax that should be used when developing examples
         - It is designed in a way for anyone to understand the behavior of a feature
+
+Gherkin
+    - Gherkin is a special syntax that is used within BDD to document examples
+    - Gherkin uses a set of special keywords to give structure and meaning to executable specifications
+        - The files that are used to store Gherkin are referred to as feature files because each file is usually used to document the behavior for one feature
+        - Each group of instructions that relate to the actions and behavior of an individual scenario of a feature is actually referred to as an example or a scenario
+    - Some of the core keywords of Gherkin are: Feature, Scenario, Example, Given, When, and Then
+    - In a standard layout each line starts with a keyword followed by some descriptive text
+        - Start with the Feature keyword whose descriptive text outlines the feature, it's expected behavior, and how it relates to a business requirement
+        - Then there is a Scenario keyword whose descriptive text outlines the specific business situation related to the feature
+        - Following these then there is Given, When, and Then — the cornerstone of Gherkin scenarios
+        - Each line in an example that begins with Given, When, or Then is called a Step
+            - These are responsible for explaining the state of a system or linking an action and the expected behavior
+    - Gherkin is written in English like statements making it easy for anyone to understand
+    - Some of the keywords and usage are
+        - Given —> used to outline some preconditions that are necessary for this scenario to be executed by a user
+        - When —> used to describe the action to be performed
+        - Then —> used to describe the outcome from the action
+        - And or But —> these can be used to duplicate any previous keyword
+        - Using And, and But can make a scenario easier to read
+    - Scenario Outline — this is useful when you want to run the same scenario with different values
+        - It is used in conjunction with the Examples keyword
+    - Examples — also referred to as data tables, are used to outline the values to be used within a Scenario Outline
+        - These are represented in a table format
+    -
