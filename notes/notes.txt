@@ -44,4 +44,27 @@ Gherkin
         - It is used in conjunction with the Examples keyword
     - Examples — also referred to as data tables, are used to outline the values to be used within a Scenario Outline
         - These are represented in a table format
+    - Gherkin Best Practices
+        - Create modular, reusable steps, and actually reuse them
+            - Do not create a step to withdraw a specific amount of money, it should be any amount of money
+            - One of the most common mistakes people make is to create Gherkin steps that are too detailed and not reusable. 
+        - Create behavior-driven steps, not procedural
+            - Write steps as if being written by a user and avoid steps referring to specific elements or selectors
+            - This is a part of the process of Gherkin steps being developed by the 3 Amigos
+        - Each scenario should represent one behaviour
+            - When creating steps for a Scenario, try to limit the scope of it to 1 behavior for that feature
+        - Utilized Backgrounds and Scenario Outlines as much as possible
+            - You can utilize these keywords as they can help to make your feature files more concise
+        - Avoid excessive use of And and But
+            - If 3 consecutive And's or But's are used it shows an issue
+            - The tester may be trying to create steps that are not reusable or steps that are too tightly coupled with the UI
+        - Try not to use punctuation, specifically periods and commas, within step phrases
+            - These may become problematic when trying to debug issues
+    - Given, When, and Then steps must appear in order
+        - A Given may not follow a When or Then and a When may not follow a Then
+
+Cucumber
+    - Cucumber is a tool that supports BDD and is used to execute Gherkin statements
+    - Cucumber works in a few steps
+        - 
     -
