@@ -66,5 +66,24 @@ Gherkin
 Cucumber
     - Cucumber is a tool that supports BDD and is used to execute Gherkin statements
     - Cucumber works in a few steps
-        - 
-    -
+        - Cucumber reads each line of a Gherkin document
+        - It validates that the statements conform to Gherkin syntax
+        - Then it maps each Gherkin statement to some predefined logic
+        - The final step is the execution of the logic
+    - Cucumber Pros and Cons
+        - The first benefit, which is also an extension from BDD, is tests are understood by the entire team
+        - Another benefit is Cucumber allows for continued collaboration and increases the visibility among the entire team.
+        - Cucumber also allows for a test to be refactored easily without changing the actual Gherkin statements
+        - A big con of Cucumber are the extra layers of abstraction which can add time and effort to create and maintain a test automation project
+        - Another con is that the use of Cucumber can lead to frustration, if not used with correct BDD and Gherkin and practices
+        - People tend to adopt tools over processes so if Cucumber is implemented badly it can create team difficulties and waste money
+    - Deciding whether to use or not
+        - Cucumber should not be used solely as an automation tool
+        - If using Cucumber then use from the beginning as going into a project knowing that it will be used is better then introducing it later
+        - There should be people on the team familiar with Cucumber & BDD and can train others
+        - Will the team benefit as Cucumber may not be as beneficial for a very short project or for a project with 2 or 2 people or in startup environments
+
+!! - To create a wdio file
+    - ./node_modules/.bin/wdio config
+    - This will create an interactive menu where selections will be used to generate  the wdio config file
+
