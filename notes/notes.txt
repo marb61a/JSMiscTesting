@@ -87,3 +87,25 @@ Cucumber
     - ./node_modules/.bin/wdio config
     - This will create an interactive menu where selections will be used to generate  the wdio config file
 
+!! - Warnings
+    - Warnings can be disabled in the wdio.conf.js file
+    - This is done by changing the property, ignoreUndefinedDefinitions to true
+
+!! - Although the default entry for feature files is to have a features directory in project root
+    - This may not be the best practice for maintainability
+    - Feature files may be better off in sub-folders each file reflecting a single component
+
+!! - Step definitions
+    - WebDriverIO expects to find Step Definitions in a specific location
+    - The config options for Step Definitions are found in the cucumberOpts section of wdio.conf.js
+    - The first property here is require which is used to load files that are needed before executing any Feature Files
+    - It maybe an idea to do as the feature files and separate into sub-folders
+
+!! - Using the WDIO Cucumber Framework module installed by WebDriverIO
+        - That also installed a Cucumber module that gives some helper methods
+        - Using Given in a file
+            - Given will need to be imported into the file at the start 
+            - The Given function is a function that requires 2 parameters
+            - The first is a string or regex and the second is a function
+            - If the base url is already in the config file then calling it is just using a backslash parameter in the global browser 
+        -
