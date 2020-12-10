@@ -90,6 +90,7 @@ Cucumber
 !! - Warnings
     - Warnings can be disabled in the wdio.conf.js file
     - This is done by changing the property, ignoreUndefinedDefinitions to true
+    - These warnings can be helpful and maybe better switched on
 
 !! - Although the default entry for feature files is to have a features directory in project root
     - This may not be the best practice for maintainability
@@ -101,11 +102,30 @@ Cucumber
     - The first property here is require which is used to load files that are needed before executing any Feature Files
     - It maybe an idea to do as the feature files and separate into sub-folders
 
-!! - Using the WDIO Cucumber Framework module installed by WebDriverIO
-        - That also installed a Cucumber module that gives some helper methods
-        - Using Given in a file
-            - Given will need to be imported into the file at the start 
-            - The Given function is a function that requires 2 parameters
-            - The first is a string or regex and the second is a function
-            - If the base url is already in the config file then calling it is just using a backslash parameter in the global browser 
-        -
+!! - Regular expressions
+    - Regular expressions are very good to know for testers and developers
+    - Using regex can be extremely powerful when used correctly
+    - 
+
+Using the WDIO Cucumber Framework module installed by WebDriverIO
+    - That also installed a Cucumber module that gives some helper methods
+    - The Given step (Using Given in a file)
+        - Given will need to be imported into the file at the start 
+        - The Given function is a function that requires 2 parameters
+        - The first is a string or regex and the second is a function
+        - If the base url is already in the config file then calling it is just using a backslash parameter in the global browser 
+    - The When Step
+        - Again will need to be imported from Cucumber
+        - The first step can again be a regex or string
+        - Using a regex will allow for much greater reusability
+            - It will mean that any matching word\phrase can be used
+            - The use of quotations is not necessarily mandatory, but it makes the statement easier to read 
+        - This is probably the trickiest part of Cucumber, crafting regular expressions to match our steps and make them reusable
+    - The Then step
+        - Again Then will need to be imported
+        - Using $$ is shorthand for telling WebDriverIO to find all matching elements
+
+Support Files
+    - This is where to put general reusable functions, typically actions and assertions
+    - Unlike the Feature Files and Step definitions, WebdriverIO doesn't necessarily need to know where these files are located
+    - 
