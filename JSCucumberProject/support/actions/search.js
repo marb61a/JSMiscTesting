@@ -1,8 +1,6 @@
+import homePage from "../../pages/Home";
+
 // Search for a keyword
-export default (keyword, inputField, submitButton) => {
-    inputField.waitForDisplayed(5000);
-    inputField.click();
-    inputField.setValue(keyword);
-    submitButton.waitForDisplayed(5000);
-    submitButton.click();
+export default (keyword) => {
+    homePage.search(keyword);
 }
