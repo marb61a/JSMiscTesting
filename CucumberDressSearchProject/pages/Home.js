@@ -1,15 +1,21 @@
 class Home{
-    get url() {
+    get url(){
         return "/";
     }
-    get searchField() {
+    get searchField(){
         return $("#search_query_top");
     }
 
-    get searchButton() {
+    get searchButton(){
         return $(".btn.btn-default.button-search");
     }
-    
+
+    // Search for a keyword
+    search(keyword){
+        this.searchField.waitForDisplayed(2000);
+        this.searchField.setValue(keyword);
+        this.searchButton.click();
+    }
 }
 
 module.exports = new Home();
