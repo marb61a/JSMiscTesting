@@ -102,10 +102,13 @@ Cucumber
     - The first property here is require which is used to load files that are needed before executing any Feature Files
     - It maybe an idea to do as the feature files and separate into sub-folders
 
+!! - Duplicate steps
+    - Backgrounds are what can be used to repeat a series of steps for scenarios
+    - This is done using the background keyword 
+
 !! - Regular expressions
     - Regular expressions are very good to know for testers and developers
     - Using regex can be extremely powerful when used correctly
-    - 
 
 Using the WDIO Cucumber Framework module installed by WebDriverIO
     - That also installed a Cucumber module that gives some helper methods
@@ -128,4 +131,15 @@ Using the WDIO Cucumber Framework module installed by WebDriverIO
 Support Files
     - This is where to put general reusable functions, typically actions and assertions
     - Unlike the Feature Files and Step definitions, WebdriverIO doesn't necessarily need to know where these files are located
-    - 
+
+Pulling Data from Tables
+    - This is done in the feature file using angle brackets and must match headers on example
+    - EG Examples with menuOption header would be "<menuOption>" in the scenario
+
+Tags
+    - Tags are an easy way to group tests, Features, or Scenarios in Cucumber
+    - It allows for grouping Features, Scenarios, and even Examples, so we can run them together, individually, or not at all
+    - The way to create tags in Cucumber is by simply putting an @ sign, followed by the tag name
+    - Using tags will need to be recognised in the wdio.conf.js file 
+    - If using tags then it maybe better to replace the tags entry with tagsExpression in the cucumberOpts section
+    
