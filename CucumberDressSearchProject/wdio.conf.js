@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 exports.config = {
     //
     // ====================
@@ -7,9 +9,6 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
-    //
-    // Override default path ('/wd/hub') for chromedriver service.
-    path: '/',
     //
     // ==================
     // Specify Test Files
@@ -143,7 +142,7 @@ exports.config = {
         source: true,       // <boolean> hide source uris
         profile: [],        // <string[]> (name) specify the profile to use
         strict: false,      // <boolean> fail if there are any undefined or pending steps
-        tagExpression: '',  // <string> (expression) only execute the features or scenarios with tags matching the expression
+        tagExpression: `@regression or @${process.env.ENVIRONMENT}`,  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 60000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
@@ -171,7 +170,7 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     beforeSession: function (config, capabilities, specs) {
-        require("@babel/register");
+        require('@babel/register');
     },
     /**
      * Gets executed before test execution begins. At this point you can access to all global
