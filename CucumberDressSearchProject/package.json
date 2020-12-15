@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@wdio/cli": "^5.11.12",
+    "dotenv": "^8.2.0",
     "webdriver": "^5.11.12"
   }
 }
