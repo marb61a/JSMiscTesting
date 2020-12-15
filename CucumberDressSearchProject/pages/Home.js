@@ -30,21 +30,7 @@ class Home{
     }
 
     // Clicking a menu option
-    selectMenuOption(option){
-        switch(option){
-            case "Women":
-                this.womenMenuOption.click();
-                break;
-            case "Dresses":
-                this.dressesMenuOption.click();
-                break;
-            case "T-Shirts":
-                this.tshirtMenuOption.click();
-                break;
-            default:
-                console.log(`Invalid Option ${option}`);
-        }
-    }
+    selectMenuOption(option){}
 
 }
 
