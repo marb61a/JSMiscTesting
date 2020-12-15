@@ -19,6 +19,14 @@ class Login {
         return $(".alert.alert-danger > ol");
     }
 
+    // Signs In
+    signIn(email, password){
+        this.emailInput.waitForDisplayed(5000);
+        this.emailInput.setValue(email);
+        this.passwordInput.setValue(password);
+        this.signInButton.click();
+    }
+
 }
 
 module.exports = new Login();
