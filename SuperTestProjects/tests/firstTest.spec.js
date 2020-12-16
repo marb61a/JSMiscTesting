@@ -17,5 +17,12 @@ describe("First test", () => {
             .end((err, res) => {
                 expect(res.statusCode).to.be.equal(200);
             });
-    })
+    });
+
+    it("Mocky OK response", () => {
+        request('http://www.mocky.io/v3/d70dd59f-1a5f-4346-b27a-54723255ffcf')
+            .get('/v2/5ea9a648340000980d3f070b')
+            .expect(200);
+    });
+
 });
