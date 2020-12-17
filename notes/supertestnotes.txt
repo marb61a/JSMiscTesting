@@ -1,0 +1,26 @@
+SuperTest
+    - Super-agent driven library for testing node.js HTTP servers using a fluent API.
+    - https://github.com/visionmedia/supertest
+    - https://www.npmjs.com/package/supertest
+        - npm i supertest
+
+Mocky
+    - Usually, when testing APIs, there will be hitting a HTTP server, and the API will be hosted there
+    - There is a site called Mocky which allows for testing purposes the setting up of a response
+        - This will then generate a HTTP response
+        - https://designer.mocky.io/design
+
+GET requests
+    - GET requests have a couple of different parameters - route parameters and query parameters
+    - Route Parameters
+        - Route parameters come in the URL themselves
+        - These can be an ID or a specific name of something being queried etc
+        - Route parameters are named URL segments that are used to capture the values specified at their position in the URL
+            - https://expressjs.com/en/guide/routing.html
+    - Query Parameters
+        - A query string is a part of a URL) that assigns values to specified parameters
+        - https://en.wikipedia.org/wiki/Query_string
+        - Query parameters are a defined set of parameters attached to the end of a url
+            - They are extensions of the URL that are used to help define specific content or actions based on the data being passed
+            - To append query params to the end of a URL, a ‘?’ Is added followed immediately by a query parameter
+            - https://branch.io/glossary/query-parameters/
