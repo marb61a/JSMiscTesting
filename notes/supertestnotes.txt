@@ -24,3 +24,24 @@ GET requests
             - They are extensions of the URL that are used to help define specific content or actions based on the data being passed
             - To append query params to the end of a URL, a ‘?’ Is added followed immediately by a query parameter
             - https://branch.io/glossary/query-parameters/
+
+!! Done in the test callback seems to be creating an issue
+    - Test fails if included, passes without?
+
+POST requests
+    - The HTTP POST method sends data to the server
+    - The type of the body of the request is indicated by the Content-Type header
+        - In the JSON reponse it is the application/json
+        - In the form case it is the application/x-www-form-urlencoded
+    - There are a couple of different ways to interact with POST requests
+        - That of the typical API which returns a JSON response and takes a JSON request
+        - That which submits a form, which will be passed as a URL form
+    - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST
+
+API responses
+    - Using SuperTest, there are a couple of different formats that can be used for the response, such as the text and the JSON object
+    - Also the status code can be asserted directly from the response
+    - Because the body is directly passed using SuperTest there is need to worry about converting the object into the format desired
+    - In JSON response there is no need to worry about the structure of the object
+    - It may be better to have a status OK response rather than having to know the HTTP codes
+
