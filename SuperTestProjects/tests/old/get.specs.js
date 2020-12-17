@@ -1,7 +1,7 @@
 const request = require("supertest");
 const expect = require("chai").expect;
 
-const app = require("../src/app");
+const app = require("../../src/app");
 
 describe("GET requests", () => {
     it("get course id", () => {
