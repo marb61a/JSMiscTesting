@@ -49,4 +49,18 @@ Nock
     - Nock is used for mocking API
         - https://github.com/nock/nock
         - It can be used to test modules that perform HTTP requests in isolation
-    -
+    - before, beforeEach, after and afterEach are hooks to be used with Mocha along with SuperTest
+    - The response object passed to Nock can be passed in a few different ways  
+        - One of the ways is the JSON object
+        - A string can also be used
+    - Nock can be used to test multiple requests or multiple scenarios
+        - However there is a need to set up Nock with multiple iterations of the mock
+        - This is because once the request has been intercepted once, it will be removed from the list and therefore won't be able to be used again
+        - To change the option of the interceptor in order to make sure that it's returned multiple times
+        - This can twice() or thrice() below the GET request
+
+Axios
+    - Using Nock to intercept an Axios call, which is embedded within a React app
+        - Axios is a Promise based HTTP client for the browser and node.js
+        - https://github.com/axios/axios
+    
