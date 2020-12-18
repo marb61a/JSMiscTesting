@@ -45,3 +45,8 @@ API responses
     - In JSON response there is no need to worry about the structure of the object
     - It may be better to have a status OK response rather than having to know the HTTP codes
 
+Nock
+    - Nock is used for mocking API
+        - https://github.com/nock/nock
+        - It can be used to test modules that perform HTTP requests in isolation
+    -
