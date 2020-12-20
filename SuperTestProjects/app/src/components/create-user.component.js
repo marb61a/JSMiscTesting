@@ -5,6 +5,10 @@ export default class CreateUser extends Component {
     constructor(props){
         super(props);
 
+        this.onChangeUserName = this.onChangeUserName.bind(this);
+        this.onChangeUserEmail = this.onChangeUserEmail.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
         this.state = {
             name: '',
             email: ''
@@ -45,7 +49,15 @@ export default class CreateUser extends Component {
         return(
             <div className="wrapper">
                 <form onSubmit={this.onSubmit}>
-
+                    <div className="form-group">
+                        <label>Add User Name</label>
+                        <input type="text" value={this.state.name} onChange={this.onChangeUserName} className="form-control"/>
+                    </div>
+                    <div className="form-group">
+                        <label>Add User Email</label>
+                        <input type="text" value={this.state.email} onChange={this.onChangeUserEmail} className="form-control"/>
+                    </div>
+                    <div className="form-group"></div>
                 </form>
             </div>
         );
