@@ -1,0 +1,21 @@
+Playwright
+    - Playwright Test Runner
+        - https://github.com/microsoft/playwright-test
+        - https://playwright.dev/
+    - Playwright enables reliable end-to-end testing for modern web apps
+    - It uses Jest-like assertions and has built in support for TypeScript
+
+Running Playwright tests
+    - Tests can be run on single or multiple browsers and with flags to generate screenshot on test failures
+        - Run all tests across Chromium, Firefox and WebKit --> npx folio 
+        - Run tests on a single browser                     --> npx folio --param browserName=chromium
+        - 
+
+Folio
+    - A customisable test framework to build your own test frameworks
+        - https://github.com/microsoft/folio
+    - It is the foundation for the Playwright test runner
+
+!! - Running Files
+    - There maybe issues with Anti-Virus on first run of tests which may cause failures 
+    - These should not be a problem on a second run
