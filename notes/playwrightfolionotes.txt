@@ -4,17 +4,33 @@ Playwright
         - https://playwright.dev/
     - Playwright enables reliable end-to-end testing for modern web apps
     - It uses Jest-like assertions and has built in support for TypeScript
+    - It is installed using NPM
+        - npm i -D playwright
+        - This automatically downloads browser binaries for Chromium, Firefox and WebKit
+        - There are advanced installation options available
+            - https://playwright.dev/docs/installation
 
 Running Playwright tests
+    - Default mode of running tests is headless
+    - There will be more workers than tests as the tests will run in multiple browsers by default if not specified
+        - This does not apply if only running console tests
     - Tests can be run on single or multiple browsers and with flags to generate screenshot on test failures
-        - Run all tests across Chromium, Firefox and WebKit --> npx folio 
-        - Run tests on a single browser                     --> npx folio --param browserName=chromium
-        - 
+        - Run all tests across Chromium, Firefox and WebKit         --> npx folio 
+        - Run tests on a single browser                             --> npx folio --param browserName=chromium
+        - Run all tests in headful mode                             --> npx folio --param headful
+        - Save screenshots on failure in test-results directory     --> npx folio --param screenshotOnFailure
+        - Record Videos                                             --> npx folio --param video
+        - To see all options available                              --> npx folio --help
+    - The testrunner can be customised with Folio parameters
+        - This can be done in the package.json test section 
 
 Folio
     - A customisable test framework to build your own test frameworks
         - https://github.com/microsoft/folio
     - It is the foundation for the Playwright test runner
+    - Folio is based on the concept of Test Fixtures
+        - These are used to establish an environment for each test
+        - The test is given all that it needs and nothing else
 
 !! - Running Files
     - There maybe issues with Anti-Virus on first run of tests which may cause failures 
