@@ -1,4 +1,4 @@
-import { folio as base } from '@playwright/test'
+import { folio as base } from '@playwright/test';
 export { expect } from 'folio';
 
 // Declare types for new fixture and parameters

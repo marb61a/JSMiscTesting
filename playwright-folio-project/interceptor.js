@@ -11,6 +11,7 @@ const playwright = require("playwright");
 
     await page.route("**\/*.{png,jpg,jpeg,svg}", route => {
         route.fulfill({
+            // Will show the status in the dev tools, if changed to 500 then 500 will show
             status: 404,
             contentType: "image",
             body: "Not Found!"
@@ -24,5 +25,6 @@ const playwright = require("playwright");
     });
 
     await page.goto("http://todomvc.com");
-
+    await browser.close();
+    
 })();
