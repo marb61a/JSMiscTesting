@@ -35,3 +35,17 @@ Folio
 !! - Running Files
     - There maybe issues with Anti-Virus on first run of tests which may cause failures 
     - These should not be a problem on a second run
+
+Running Tests
+    - Like other frameworks using the keyword only on tests will run that sole test
+        !!! - it.only
+
+Network Interception
+    - There are Network Interceptors but it may be better to use the route feature
+        - https://playwright.dev/docs/api/class-page?_highlight=page.route#pagerouteurl-handler
+    - This has multiple options for intercepting items before reaching the browser
+    - For example HTTP codes can be changed eg 404 codes can be customised
+
+Overrides
+    - Overrides on the command line will not affect running it must be done at the fixture level
+    - If there is not an browseroptions override in the file then adding a browserName option will not work
