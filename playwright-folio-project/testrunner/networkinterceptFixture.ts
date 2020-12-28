@@ -3,6 +3,15 @@ import { BrowserContext } from "playwright";
 
 const fixtures = base.extend<{browserExtendContext: BrowserContext}>();
 
+fixtures.browserOptions.override(async ({}, run) => {
+    await run({
+        headless: false,
+        slowMo: 2500,
+        devtools: true
+    });
+
+});
+
 fixtures.browserExtendContext.init(async({context}, runTest) => {
     await context.route("**\/*.{png,jpg,jpeg,svg}", route => {
         route.fulfill({
