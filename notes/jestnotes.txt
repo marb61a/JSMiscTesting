@@ -1,0 +1,24 @@
+Jest
+    - https://jestjs.io/
+    - Jest is an open sourced JavaScript testing library from Facebook
+    - Jest is not just a test-runner, it is a complete testing framework that has brought modern testing to another level
+    - Jest is very easy to setup
+    - It is also extremely fast during test execution
+        - This is because of a combination of several factors, including parallelization and running slowest test first
+        - This will ensure that all machine cores are utilised as much as possible
+    - Jest also does Snapshot testing
+    - It also comes with built-in matchers, spies and its own extensive mocking library
+
+When To Use Jest
+    - Jest can be used for Unit Testing
+    - It can be used for API testing with other Javascript libraries like superTest or request-promise
+    - Along with Puppeteer Jest can be used to perform UI testing 
+    - Modern databases including NoSQL databases suchas MongoDB can be tested
+
+Installing Jest
+    - Node and NPM are pre-requisites
+    - To install and add to dev-dependencies
+        - npm install --save-dev jest
+    - Change package.json to run test easier
+        - In scripts section cahnge to "test": "jest"
+    -
