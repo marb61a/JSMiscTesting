@@ -57,6 +57,28 @@ Before And After Code
     - Usually when writing tests work is needed both before and after tests are run
     - The helper functions Jest provides to do this are
         - beforeEach(), afterEach(), beforeAll() and afterAll()
-        - If there is work needed repeatedly before many tests you can use beforeEach
-        - If there is work needed repeatedly after the test, you can use afterEach
-    - 
+        - If there is work needed repeatedly before many tests you can use beforeEach()
+        - If there is work needed repeatedly after the test, you can use afterEach()
+    - In some instances there is only a need to setup once at test beginning and once at at the end pf test completion
+        - In this case use beforeAll() and afterAll() 
+
+Running Specific tests
+    - In Jest, you can choose to run tests in many different ways
+        - All tests can be ran in a project, specific test files, a single test in a file amd run tests in watch mode
+    - To run a single test file
+        - npm run test <file_name>
+    - Running Specific Tests Within a File
+        - This is done by adding the word only to a test i.e. test.only
+        - This will only run the single test even though there may be several in the file
+    - Running in Watch Mode
+        - This is done by adding an entry to the scripts section in package.json
+        - "test:watch": "jest --watchAll"
+        - Run npm run test:watch
+        - When this runs a hidden menu appears which gives many more options appears
+            - These options can be very useful eg only run failed tests 
+
+Async Testing in Jest
+    - Asynchronous code in JavaScript can be tough to understand
+        - It is important to understand and the conceps are not as daunting as firstly might appear
+    - It is common in JavaScript to run asynchronously
+    
