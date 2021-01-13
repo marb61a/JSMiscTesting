@@ -41,4 +41,22 @@ String Matchers
 Number Matchers
     - There are several different number matchers available
     - Some include .toBeGreaterThan. ,  .toBeLessThan. , .toBeLessThanOrEqual
-     
+
+Truthiness Matchers
+    - Often there is a need to test some less than conventional values ie null, undefined, true or false execution
+    - If something is said to be Truthy, then it is considered true if the value is considered true
+    - Some matchers include toBeDefined(), toBeNull(), toBeTruthy() and toBeFalsy()
+    - !!! null is considered as a false value
+
+Array Matcherss
+    - This can test to see whether an array holds a certain value
+    - Probably the most important array matcher is toContain()
+
+Before And After Code
+    - This can be referred to as setup and teardown features
+    - Usually when writing tests work is needed both before and after tests are run
+    - The helper functions Jest provides to do this are
+        - beforeEach(), afterEach(), beforeAll() and afterAll()
+        - If there is work needed repeatedly before many tests you can use beforeEach
+        - If there is work needed repeatedly after the test, you can use afterEach
+    - 
