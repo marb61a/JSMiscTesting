@@ -20,5 +20,25 @@ Installing Jest
     - To install and add to dev-dependencies
         - npm install --save-dev jest
     - Change package.json to run test easier
-        - In scripts section cahnge to "test": "jest"
-    -
+        - In scripts section change to "test": "jest"
+        - To run then is simply ->  npm run test 
+
+!!! Jest Naming convention
+    - Jest reads all files named with the ".test" or ".spec."
+
+Matchers
+    - Matchers are methods that let you test your values
+    - Usually a matcher is used in conjunction with an .expect
+    - The 2 most common matchers are toBe and toEqual
+        - toBe tests for strict equality
+        - toEqual tests the value of an object
+    - Another common matcher is not and can be used with the 2 above
+
+String Matchers
+    - You can easily test for certain String values by using regular expressions using the .toMatch matcher
+    - This can test for a certain word being contained in a larger word or sentence
+
+Number Matchers
+    - There are several different number matchers available
+    - Some include .toBeGreaterThan. ,  .toBeLessThan. , .toBeLessThanOrEqual
+     
