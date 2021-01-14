@@ -81,4 +81,23 @@ Async Testing in Jest
     - Asynchronous code in JavaScript can be tough to understand
         - It is important to understand and the conceps are not as daunting as firstly might appear
     - It is common in JavaScript to run asynchronously
-    
+    - When there is async code Jest needs to know when the code it is testing has completed before it can move on
+    - Jest has 3 different ways to handle async code
+        -  Async/await, callbacks, promises
+    - Async/await is the now preferred way over the other 2 methods
+
+Snapshot Testing
+    - Jest docs state that snapshots are a great new way of testing UI components
+    - Snapshot tests are a very useful tool whenever you want to make sure your UI does not change unexpectedly
+        - If performing a UI test and a snapshot is taken this should match a reference snapshot stored alongside the test
+        - The test will fail if the snapshots do not match so will need to be either changed if the UI has changed or the error fixed
+    - Snapshot tests are not limited to solely UI testing
+    - Snapshots are created using the .toMatchSnapshot() method
+        - This will generate a _snapshots_ directory and a snapshot file inside
+        - The file should hold values similar to what would be there had an assertion been used instead
+
+!!! Running specific tests
+    - There may be a test failure if using tab to complete file paths
+        -  npm run test .\snapshots.test.js         -> fails
+        -  npm run test snapshots.test.js           -> passes
+        
