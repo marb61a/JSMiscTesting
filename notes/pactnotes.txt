@@ -21,4 +21,27 @@ Broker
     - A broker is where contracts are stored
     - This can be any generic asset server but support for versioning is ideal
     - The pact-broker maybe a good solution as it is well-suited and is Open Source
-     
+
+Contract Test Hierarchy
+    - Contract tests occupy the same space in the testing hierarchy as integration tests
+    - Wherever the integrity of communications between services must be verified, an opportunity to create contract tests exists
+    - !!! Do not confuse contract tests with component tests
+        - Contract tests do not test the functional behavior of services, only whether or not inputs and outputs of service requests conform to an expected set of attributes
+
+Contract Tests vs. Integration Tests
+    - Integration tests require a complete runtime environment contract tests do not
+    - Mock consumers and mock providers can be created to interact with real consumers and real providers, allowing tests to be run in isolation
+    - Integration tests expose faults in interactions between integrated units
+        - Contract tests however expose faults in communication messages between services
+        - This improves system regression detection, alerting developers early to contract faults when changes are committed to providers or consumers alike
+    - Contract tests also allow consumers to develop against API definitions before the provider API has formally completed development
+
+Contract Tests vs. End-to-End API Tests
+    - End-to-End functional testing will uncover discrepancies that appear in output data or the user interface
+        - Contract tests will only check that API endpoint connections are active and functioning correctly
+    - End-to-End tests are designed to be rigorous and complex which makes them time-intensive to execute
+        - These tests tend to uncover significant defects that would otherwise go undetected
+    - Contract testing, while limited in scope, is less intensive and can be performed more frequently
+        - This provides a form of smoke test coverage each time code is deployed
+
+Contract Tests vs Functional Tests
