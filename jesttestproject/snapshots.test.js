@@ -28,3 +28,10 @@ test("it returns all items with matching Item Name", () => {
 })
 
 // Snapshot version of tests
+test("it returns all items with matching ID", () => {
+    expect(filterItemStock(itemStock, "Id", "1")).toMatchSnapshot();
+})
+
+test("it returns all items with matching Item Name", () => {
+    expect(filterItemStock(itemStock,'ItemName', 'Socks')).toMatchSnapshot();
+})
