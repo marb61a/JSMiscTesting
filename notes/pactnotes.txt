@@ -1,0 +1,24 @@
+Intro To Contract Tests
+    - https://docs.pact.io/
+
+Contracts
+    - Contracts can be thought of as a legally enforceable agreement
+    - Contracts represent a set of interactions with expected requests and response structures
+    - Often the term pact and contract can be used interchangably
+
+What is a contract test 
+    - A Contract Test verifies that a provider has fulfilled a contract expected by a consuming service and ensures that services can communicate with each other
+    - Contract Tests are applicable anywhere where two services communicates with each other eg an API to a front-end 
+    - Contract tests can have either a simple or complex structure
+    - Often the provider of one flow can be the consumer of another, as is common in a microservices architecture
+
+Providers and Consumers
+    - Firstly what constitutes a provider and consumer
+        - A provider is any party that provides a service for interactions with its dependents
+        - A consumer is any party that interacts with a dependent service through an API
+
+Broker
+    - A broker is where contracts are stored
+    - This can be any generic asset server but support for versioning is ideal
+    - The pact-broker maybe a good solution as it is well-suited and is Open Source
+     
