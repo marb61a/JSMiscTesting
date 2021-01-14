@@ -45,3 +45,28 @@ Contract Tests vs. End-to-End API Tests
         - This provides a form of smoke test coverage each time code is deployed
 
 Contract Tests vs Functional Tests
+    - Contract testing focuses on the messages that flow between a consumer and a provider while functional testing ensures that the expected system behavior has occurred
+
+Mocking Test Interfaces With Pact
+    - Pact is a consumer-driven contract testing tool
+        - This means that contracts are generated during the execution of consumer tests
+    - The advantage of this pattern limits testing only to producer output that is actually used
+    - This means that any provider behaviour that is not being used by current customers is free to change without breaking any tests
+    - Pact manages the mocking of provider and consumer objects as well as contract definitions
+    - The basic flow of interactions between real provider/consumer objects and Pact mock provider/consumer objects is as follows
+        - Test Driven Development or TDD is used to write test code
+        - Pact then produces a mocked response as if a real request was being made to a real server
+        - Then a Pact JSON file is generated
+    - When a test is triggered on the provider side, the Pact JSON file is loaded
+        - A verification process then determines whether or not the contract matches what a consumer is expecting
+        - Pact generates this contract file in accordance with consumer expectations and will be used to match what the real provider server is actually sending
+
+Languages Supported
+    - Pact supports several different languages including
+    - Providers and consumers can be written in different languages
+        - JVM languages, .NET, JavaScript, Ruby, PHP, Go, Python and Swift
+
+Contract Testing 
+    - Contract testing is best used in conjunction with other types of testing to improve the overall quality of an application release
+    - Contract tests can be used to detect defects within consumer workflows, end point configuration miscommunications or paylod changes that are not expected
+    
