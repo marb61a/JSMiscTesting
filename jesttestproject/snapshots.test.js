@@ -1,3 +1,5 @@
+const { TestScheduler } = require("jest");
+
 var itemStock = [
     { 'Id': '1', 'ItemName': 'Razors', 'Stock': '10' },
     { 'Id': '2', 'ItemName': 'Socks', 'Stock': '1'},
@@ -5,6 +7,24 @@ var itemStock = [
     { 'Id': '4', 'ItemName': 'Socks', 'Stock': '100'},
 ];
 
-function filterItemStock(){
-    
+function filterItemStock(arr, key, term){
+    return arr
+        .filter(function(obj){
+            return obj[key] === term;
+        });
 }
+
+test("it returns all items with matching ID", () => {
+    expect(filterItemStock(itemStock, "Id", "1")).toEqual([
+        { 'Id': '1', 'ItemName': 'Razors', 'Stock': '10' }
+    ]);
+})
+
+test("it returns all items with matching Item Name", () => {
+    expect(filterItemStock(itemStock,'ItemName', 'Socks')).toEqual([
+        { 'Id': '2', 'ItemName': 'Socks', 'Stock': '1'},
+        { 'Id': '4', 'ItemName': 'Socks', 'Stock': '100'},
+    ]);
+})
+
+// Snapshot version of tests
