@@ -32,7 +32,7 @@ const getClient = async (id) => {
 
 const postClient = async (body) => {
     const res = await axios
-        .postt(`${getApiEndpoint}/clients`, body, {"Content-Type": "application/json;charset=utf-8"})
+        .post(`${getApiEndpoint}/clients`, body, {"Content-Type": "application/json;charset=utf-8"})
         .then((res) => {
             return res;
         })
