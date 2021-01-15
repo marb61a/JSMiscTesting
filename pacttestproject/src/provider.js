@@ -30,3 +30,30 @@ const importData = () => {
         return a + 1;
     }, 0);
 };
+
+// Get all clients
+server.get("/clients", (req, res) => {
+    res.json(clientRepository.fetchAll());
+});
+
+// Find client by ID
+server.get("/clients/:id", (req, res) => {
+    const response  = clientRepository.getById(req.params.id);
+
+    if(response){
+        res.end(JSON.stringify(response));
+    } else {
+        res.status(404);
+        res.send({
+            message: "Client not found!"
+        });
+        res.end();
+    }
+
+});
+
+module.exports = {
+    server,
+    importData,
+    clientRepository
+};
