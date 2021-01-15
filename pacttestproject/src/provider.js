@@ -52,6 +52,28 @@ server.get("/clients/:id", (req, res) => {
 
 });
 
+// Add a new client
+server.post("/clients", (req, res) => {
+    const client = req.body;
+
+    // Validates missing first name field
+    if(!client || !client.firstName){
+        res.status(404);
+        res.send({
+            message: "Missing first name!",
+            body: req.body
+        });
+        res.end();
+
+        return;
+    }
+
+    client.id = clientRepository.fetchAll().length
+    clientRepository.add(client)
+
+    res.json(client)
+});
+
 module.exports = {
     server,
     importData,
