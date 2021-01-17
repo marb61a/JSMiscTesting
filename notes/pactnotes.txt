@@ -70,3 +70,27 @@ Contract Testing
     - Contract testing is best used in conjunction with other types of testing to improve the overall quality of an application release
     - Contract tests can be used to detect defects within consumer workflows, end point configuration miscommunications or paylod changes that are not expected
     
+Installing Pact
+    - To install Pact from the command line use the following command
+        - npm install --save-dev @pact-foundation/pact
+
+Pact 
+    - Pact popularity is in part because its support for service integration testing without the need to create mocks or stubs
+        - Pact creates all of the infrastructure and reuses the same functions that the consumer uses to create contracts
+        - Representative, real-world testing is possible while eliminating liabilities such as unreliable internet connectivity and mocking infrastructure maintenance
+        - Pact integrates services by creating its contract and mocks around existing functions
+
+!!! Running Provider service
+    - The scripts section of package.json can be adjusted to run services so that the following command works
+        - npm run provider
+
+!!! Logging
+    - Logging paths will automatically be created on test execution
+
+!!! Spec
+    - spec -> is a specification of Pact for other languages and is part of the contract structure
+        - JVM uses a value of 3 whereas all other languages use 2
+
+!!! Overwriting
+    - A value of “overwrite” for pactfileWriteMode will overwrite and truncate existing Pact files on each test execution
+        - A value of "updated" will append to a Pact file
