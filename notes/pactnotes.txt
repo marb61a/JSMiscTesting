@@ -94,3 +94,27 @@ Pact
 !!! Overwriting
     - A value of “overwrite” for pactfileWriteMode will overwrite and truncate existing Pact files on each test execution
         - A value of "updated" will append to a Pact file
+
+!!! Testwrapper
+    - Uses Jasmine and is infrastructure code to setup provider prior to test execution
+
+!!! RunInBand
+    - This directive uses in the scripts section of package.json is to ensure that test execution will take place in sequence
+
+!!! Use Strict
+    - "use strict" prevents the use of undeclared variables
+    - This is put at the top of a file 
+
+Provider Verifier
+    - In the real world a the provider verifier would be defined in the provider project only
+
+Real World Dependencies
+    - Tests are performed against the actual service
+        - Mocks are used to avoid issues associated with E2E testing
+    - Tests are representative of real world application workflows and contracts
+
+!!! Matchers
+    - Matchers can be written to be flexible when matching expectations
+    - Matching will occur against the value of contents (Matchers.like(POST_EXPECTED_BODY).contents)
+    - Matchers.like() will allow any field so long as the type is the same
+    
