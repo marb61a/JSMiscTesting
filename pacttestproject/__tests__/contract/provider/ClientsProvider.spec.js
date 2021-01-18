@@ -16,8 +16,21 @@ describe("Clients Service Verification", () => {
             logLevel: "DEBUG",
             providerBaseUrl: SERVER_URL,
             pactUrls: [
-                
-            ]
+                path.resolve(
+                    process.cwd(),
+                    "./__tests__/contract/pacts/frontend-clientsservice.json"
+                )
+            ],
+            consumerVersionTags: ["dev"],
+            providerVersionTags: ["dev"],
+            publishVerificationResult: false,
+            providerVersion: "1.0.0"
         }
+
+        return new Verifier(opts).verifyProvider()
+            .then(output => {
+                console.log("Pact verification complete!");
+                console.log(output);
+            });
     });
 });
