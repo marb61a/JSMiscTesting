@@ -22,6 +22,7 @@ describe("Clients Service", () => {
     }]
 
     afterEach(() => provider.verify());
+
     describe("GET Clients", () => {
         beforeEach(() => {
             const interaction = {
@@ -51,7 +52,32 @@ describe("Clients Service", () => {
             expect(response.headers['content-type']).toBe("application/json; charset=utf-8");
             expect(response.data).toEqual(GET_EXPECTED_BODY);
             expect(response.status).toEqual(200);
-        })
+        });
     });
 
+    const POST_BODY = {
+        firstName: "Joe",
+        lastName: "Bloggs",
+        age: 30
+    };
+
+    const POST_EXPECTED_BODY = {
+        firstName: POST_BODY.firstName,
+        lastName: POST_BODY.lastName,
+        age: POST_BODY.age,
+        id: 3
+    };
+
+    describe("POST Client", () => {
+        beforeEach(() => {
+            const interaction = {
+                state: "i create a new client",
+                uponReceiving: "a request to create client with firstname and lastname",
+                
+            }
+
+            return provider.addInteraction(interaction);    
+        });
+    });
+    
 });
