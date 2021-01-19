@@ -117,4 +117,25 @@ Real World Dependencies
     - Matchers can be written to be flexible when matching expectations
     - Matching will occur against the value of contents (Matchers.like(POST_EXPECTED_BODY).contents)
     - Matchers.like() will allow any field so long as the type is the same
-    
+
+Pact Foundation broker
+    - To install the pact broker
+        - https://github.com/pact-foundation/pact_broker
+        - git clone git@github.com:pact-foundation/pact_broker.git
+        - cd cd pact_broker/example
+    - Need to have both Ruby and Bundle installed
+    - Ruby installer for windows is available at
+        - https://rubyinstaller.org/
+    - Bundle will also need to be installed
+        - https://bundler.io/
+    - To start the web server interface on port 8080
+        - From in the example directory -> bundle install 
+        - bundle exec rackup -p 8080
+    - The pact broker can now be viewed locally at the following address
+        - localhost:8080/groups/Example App/
+    - This will allow to see pacts that have been published
+    - To view the contract click on the document icon
+        - This will display the Pact that was created between the front-end and the client service
+    - If the status of contracts is empty
+        - This is because the provider verification still needs to be run and results need to be published
+    -
