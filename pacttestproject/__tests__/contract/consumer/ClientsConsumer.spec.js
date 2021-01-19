@@ -26,7 +26,7 @@ describe("Clients Service", () => {
     describe("GET Clients", () => {
         beforeEach(() => {
             const interaction = {
-                state: "i have a list of cients",
+                state: "i have a list of clients",
                 uponReceiving: "a request for all clients",
                 withRequest: {
                     method: "GET",
