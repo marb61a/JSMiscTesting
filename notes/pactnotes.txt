@@ -138,4 +138,28 @@ Pact Foundation broker
         - This will display the Pact that was created between the front-end and the client service
     - If the status of contracts is empty
         - This is because the provider verification still needs to be run and results need to be published
+
+Scripts, Contract Publishing and Verification
+    - Docker can be used to create the Pact broker as well
+    - A Pact broker is not necessarily required
+        - Contracts can be saved to your own repo and the provider will be able to reference them from there
+
+Usage Guidelines for Matchers
+    - Try to avoid hard-coding literal values into the contract
+    - Instead, attempt to match values based on their type, structure, or through the use of regular expressions
+    - Hard-coded values represent unnecessary constraints during provider testing when contracts are replayed using the Pacts runner
+    - Use of expected types and regular expression patterns enable more freedom in data and state management on the provider contract testing side
+    - A point to remember is that Regular expressions can only be used on strings
+    - Exact values returned by the provider during verification are of less concern so long as the types match
+    - Avoid the use of random data when composing expectations so that tags are consistent and reproducible
+        - This is because the Pacts broker calculates a hash on the contract
+        - When the hash is the same, it indicates that no change was made to the contract
+        - Even if re-published, no additional provider verification results are required
+        - However if the hash has changed this shows the contract has changed and is treated like a new contract
+        - Using random data forfeits this optimization that the Pact broker performs
+    - Contracts can be matched by type
+        - With this type of matching, the only consideration is whether or not types match regardless of value
+        - Queries can also be used. Queries are specified as strings but query pairings must be URL encoded in the expectation
+        - If the order of the query pairings does not matter, the query can be expressed as a hash
+        - Hashes can embed Pact terms such as somethingLike but be aware that all query pairings will be parsed to strings so do not use the term with a number
     -
