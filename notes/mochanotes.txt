@@ -1,0 +1,23 @@
+Mocha
+    - Mocha is a JavaScript-based testing framework running on NodeJS and browser
+        - It is similar to TestNG framework for Java, and NUnit framework for C#
+        - It is used to organize the tests and execute them in a logical sequence to make the testing more effective
+        - It also makes the asynchronous testing to be simple and fun to execute
+
+Prerequisites
+    - NodeJS and NPM are needed to
+
+Mocha
+    - https://mochajs.org/
+    - https://www.npmjs.com/package/mocha
+    - To install Mocha use the following command
+        - npm install mocha -g
+    - To check that Mocha is installed use the following command
+        - mocha -version
+
+Functions Calls
+    - A describe() function is a simple way to group tests in Mocha
+        - In general, the describe() function takes 2 arguments
+        - The first is the name or description of the test group and the second one is the callback function
+        - This is a function that needs to be executed after another function has finished executing
+    - 

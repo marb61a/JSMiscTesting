@@ -162,4 +162,5 @@ Usage Guidelines for Matchers
         - Queries can also be used. Queries are specified as strings but query pairings must be URL encoded in the expectation
         - If the order of the query pairings does not matter, the query can be expressed as a hash
         - Hashes can embed Pact terms such as somethingLike but be aware that all query pairings will be parsed to strings so do not use the term with a number
-    -
+
+
