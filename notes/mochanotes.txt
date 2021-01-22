@@ -42,5 +42,26 @@ Test Features
     - Exclusive test feature allows us to execute only the specified test suite or a test case
         - This can be achieved by adding .only() function, and it can be added to both describe() and it() functions
     - Inclusive test is an inverse of the .only() function
-        - 
-    -
+        - This can be achieved by adding .skip()
+        - This will tell Mocha to simply ignore these tests suites or test cases and is applicable for both pre-bundled functions, describe() and it()
+        - When running tests the skipped test will list as pending
+    - Pending tests are the ones that someone should write eventually
+        - Pending tests will be included in the test results and marked as pending
+        - A pending test is not considered as failed a test
+
+Retry
+    - Retry is a function available within Mocha to execute the failed test several times
+    - It is configurable and can be used in case if you use End-to-End tests, like Selenium Scripts
+    - Retry will not work with before() and after() hooks
+        - It can be used in beforeEach() and afterEach() hooks
+    - It is not recommended to use the retry in unit test
+    - Timeout functionality is available as part of Mocha to explicitly tell Mocha for the timeouts
+    - There are 3 levels where timeouts can be used. First is suite-level, Second is test-level and third is hook-level
+        - Suite-level timeouts are used to throw out the test suites
+        - Test-level timeouts are specific to the test case
+        - Hook-level timeouts can be used in the hooks
+
+Reporters
+    - In general, Mocha reporters are mostly terminal based
+    - There are different types of reporters available as part of Mocha, of which, spec and dot matrix are the commonly used reporter types
+    - 
