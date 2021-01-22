@@ -64,4 +64,20 @@ Retry
 Reporters
     - In general, Mocha reporters are mostly terminal based
     - There are different types of reporters available as part of Mocha, of which, spec and dot matrix are the commonly used reporter types
-    - 
+    - Spec is the default reporter
+        - The spec reporter outputs a hierarchical view according to the test cases
+    - The dot matrix reporter is a series of characters which represent the test cases
+        - Failures are highlighted in the red exclamation mark, the pending tests with the blue comma and the slow tests as a yellow color
+    - There are other types that are available like NYAN, TAP, Landing Strip, List, Progress, JSON, Json Stream
+    - To see the spec reporter use the following command
+        - mocha test/ --reporter spec
+        - The type of report is after the word reporter
+    - To see the dot matrix reporter use the following command
+        - mocha test/ --reporter dot
+        - The dots that you see here in the green color are the test cases that are passing
+        - The commas that you see here in blue color are the test cases that are pending
+        - The one with exclamation mark in red color is nothing but the failure test case
+    - To see the NYAN report use the following command
+        - mocha test/ --reporter nyan
+    -  To see the JSON report just change the word after reporter to json 
+        - In this type of report you will not be able to see the progress of the test case
