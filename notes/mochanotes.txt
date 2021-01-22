@@ -14,10 +14,33 @@ Mocha
         - npm install mocha -g
     - To check that Mocha is installed use the following command
         - mocha -version
+    - To run tests using just npm test change the test section in package.json
+        - It should read -> "test": "mocha"
+        - The file name needs to also be supplied
 
 Functions Calls
     - A describe() function is a simple way to group tests in Mocha
         - In general, the describe() function takes 2 arguments
         - The first is the name or description of the test group and the second one is the callback function
         - This is a function that needs to be executed after another function has finished executing
-    - 
+    - The it() function is a way to describe the individual test cases
+        - These tests should be nested within the describe() block
+        - The it() should be described in a way that it makes sense for the given test case
+
+Mocha Hooks
+    - In general Mocha provides 4 hooks
+        - before(), after(), beforeEach(), afterEach()
+    - The before() hook will execute the code clock before the test executes from it() function
+    - The after() hook will execute the code block after all the tests executes
+    - The beforeEach() hook will run the code block before every test execution
+    - The afterEach() hook will be running the code block after every text execution
+    - !!!! The hooks should be present within the describe() block
+        - If these hooks are not present inside the describe() block, none of the hooks will be executed during the test execution
+
+Test Features
+    - There are 3 types of test features available. First, exclusive. Second, inclusive and third, pending
+    - Exclusive test feature allows us to execute only the specified test suite or a test case
+        - This can be achieved by adding .only() function, and it can be added to both describe() and it() functions
+    - Inclusive test is an inverse of the .only() function
+        - 
+    -
